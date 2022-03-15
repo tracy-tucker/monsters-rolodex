@@ -11,10 +11,22 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // API request
-    fetch("https://jsonplaceholder.typicode.com/users").then((response) =>
-      console.log(response.json())
-    );
+    // XMLHttpRequest using Fetch API
+    fetch("https://jsonplaceholder.typicode.com/users")
+      // Promise object - if successful, convert using .json()
+      .then((response) => response.json())
+      // Another Promise object - if successful, use it to setState()
+      .then((users) =>
+        this.setState(
+          () => {
+            // returning list of users as items in monsters array
+            return { monsters: users };
+          },
+          () => {
+            console.log(this.state);
+          }
+        )
+      );
   }
 
   render() {
