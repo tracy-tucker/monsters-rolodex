@@ -8,9 +8,11 @@ class App extends Component {
     this.state = {
       monsters: [],
     };
+    console.log("1 constructor");
   }
 
   componentDidMount() {
+    console.log("3 componentDidMount");
     // XMLHttpRequest using Fetch API
     fetch("https://jsonplaceholder.typicode.com/users")
       // Promise object - if successful, convert using .json()
@@ -23,13 +25,14 @@ class App extends Component {
             return { monsters: users };
           },
           () => {
-            console.log(this.state);
+            console.log("4 after running Fetch", this.state);
           }
         )
       );
   }
 
   render() {
+    console.log("2 render");
     return (
       <div className="App">
         {this.state.monsters.map((monster, index) => {
