@@ -59,7 +59,7 @@ class App extends Component {
           placeholder="search monsters"
           onChange={onSearchChange}
         />
-        <CardList />
+        <CardList monsters={filteredMonsters} />
         {/* {filteredMonsters.map((monster, index) => {
           return <h1 key={index}>{monster.name}</h1>;
         })} */}
