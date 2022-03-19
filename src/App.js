@@ -5,8 +5,8 @@ import SearchBox from "./components/search-box/search-box.component";
 
 const App = () => {
   const [searchField, setSearchField] = useState("");
-  const [filteredMonsters, setFilteredMonsters] = useState(monsters);
   const [monsters, setMonsters] = useState([]);
+  const [filteredMonsters, setFilteredMonsters] = useState(monsters);
 
   useEffect(() => {
     console.log("effect fired");
